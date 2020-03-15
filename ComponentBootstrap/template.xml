@@ -1,0 +1,34 @@
+<template format="4"
+        revision="1"
+        name="Component Bootstrap"
+        description="Creates a component">
+
+    <category value="Bootstrap"/>
+
+    <parameter
+        id="componentName"
+        name="Component name"
+        type="string"
+        constraints="class|unique|nonempty"
+        default="MyComponent"
+        help="The name of the component to create" />
+
+    <parameter
+        id="lowerCaseComponentName"
+        name="Lower cased component name"
+        type="string"
+        constraints="class|unique|nonempty"
+        default="myComponent"
+        help="The name of the component to create" />
+
+    <parameter
+        id="packageName"
+        name="Package name"
+        type="string"
+        constraints="package"
+        default="com.mycompany.myapp" />
+
+    <globals file="globals.xml.ftl" />
+    <execute file="recipe.xml.ftl" />
+
+</template>
