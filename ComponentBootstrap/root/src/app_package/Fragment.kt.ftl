@@ -10,14 +10,10 @@ import ${packageName}.di.${componentName}FragmentComponent
 
 class ${componentName}Fragment : BaseFragment<${componentName}ViewModel, Fragment${componentName}Binding>(${componentName}ViewModel::class) {
 
-    companion object {
-        fun newInstance() = ${componentName}Fragment()
-    }
-
     init {
         lifecycleScope.launchWhenStarted {
             viewModel.state.collect {
-                Log.d("matej", "SearchFragment.viewModel.state.value [$it]")
+                Log.d("matej", "${componentName}Fragment.viewModel.state.value [$it]")
                 updateView(it)
             }
         }
